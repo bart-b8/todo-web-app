@@ -1,9 +1,7 @@
-FILEPATH = r'files\todos.txt'
+FILEPATH = r'todos.txt'
 
 import os
 
-if not os.path.isdir(os.path.split(FILEPATH)[0]):
-    os.mkdir(os.path.split(FILEPATH)[0])
 if not os.path.exists(FILEPATH):
     with open(FILEPATH, 'w') as file:
         pass
