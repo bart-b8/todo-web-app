@@ -20,3 +20,15 @@ def write_todos(todos_arg, filepath = FILEPATH):
     todos_arg = [arg + '\n' for arg in todos_arg]
     with open(filepath, 'w') as file:
         file.writelines(todos_arg)
+
+if __name__ == "__main__":
+    with open("testtodos.txt", 'x') as file:
+        testtodos = ['test1', 'test2']
+        testtodos = [i+'\n' for i in testtodos]
+        file.writelines(testtodos)
+    todos = get_todos("testtodos.txt")
+    print(todos)
+    newtodo = 'test function'
+    todos.append(newtodo)
+    write_todos(todos, "testtodos.txt")
+    os.remove("testtodos.txt")
